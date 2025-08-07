@@ -1,0 +1,9 @@
+{
+  "name": "com.azur.windows-system",
+  "version": "1.0.0",
+  "displayName": "[Azur] - Windows System",
+  "description": "Simple windows system for UI.",
+  "category": "Tools",
+  "documentationUrl": "https://github.com/azur-games/WindowsSystem",
+  "changelogUrl": "https://github.com/azur-games/WindowsSystem/releases"
+}

@@ -343,8 +343,11 @@ GameObject:
   - component: {fileID: 344725323}
   - component: {fileID: 344725322}
   - component: {fileID: 344725321}
+  - component: {fileID: 344725330}
   - component: {fileID: 344725325}
-  - component: {fileID: 344725326}
+  - component: {fileID: 344725329}
+  - component: {fileID: 344725328}
+  - component: {fileID: 344725327}
   m_Layer: 5
   m_Name: Settings Window
   m_TagString: Untagged
@@ -454,7 +457,7 @@ MonoBehaviour:
   soundText: {fileID: 909608230}
   vibrationButton: {fileID: 1172544359}
   vibrationText: {fileID: 396871103}
---- !u!114 &344725326
+--- !u!114 &344725327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -463,10 +466,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 344725320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4153f1f5c7d348f6825b55409e91c676, type: 3}
+  m_Script: {fileID: 11500000, guid: 68882284740c4a20b91f608feb8a7959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _view: {fileID: 344725325}
+--- !u!114 &344725328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344725320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers: []
+  _installerPrefabs: []
+  _findSiblingMonoInstallers: 1
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &344725329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344725320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b101fff7a3764298a8e82adc92cbab18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 344725323}
+  _graphicRaycaster: {fileID: 344725321}
+  defaultWindowActivationAnimation: {fileID: 11400000, guid: eb91128a1e374794e93147be522bbc4d, type: 2}
+  defaultWindowDeactivationAnimation: {fileID: 11400000, guid: 8d18ca47c6193b94698c0224722b5e29, type: 2}
+  _canvasGroup: {fileID: 344725330}
+--- !u!225 &344725330
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344725320}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &396871101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1601,8 @@ GameObject:
   - component: {fileID: 1146849884}
   - component: {fileID: 1146849883}
   - component: {fileID: 1146849887}
+  - component: {fileID: 1146849890}
+  - component: {fileID: 1146849889}
   - component: {fileID: 1146849888}
   m_Layer: 5
   m_Name: Menu Window
@@ -1668,10 +1719,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 1146849882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a414856b1ec45f398493124aa4b223a, type: 3}
+  m_Script: {fileID: 11500000, guid: a3c45bc95f9b40ac8045458e0589226a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuView: {fileID: 1146849887}
+--- !u!114 &1146849889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146849882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers: []
+  _installerPrefabs: []
+  _findSiblingMonoInstallers: 1
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &1146849890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146849882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1195f1ce7d4d94b09324483d2bfbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 1146849885}
+  _graphicRaycaster: {fileID: 1146849883}
+  defaultWindowActivationAnimation: {fileID: 11400000, guid: 14c170470608f3540a84c04076bb1cfa, type: 2}
+  defaultWindowDeactivationAnimation: {fileID: 11400000, guid: 8d18ca47c6193b94698c0224722b5e29, type: 2}
 --- !u!1 &1172544357
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,6 +2141,61 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1471071849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1471071851}
+  - component: {fileID: 1471071850}
+  m_Layer: 0
+  m_Name: WindowsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1471071850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471071849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4d65345e6b45479de0dd43d64d318f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultWindowsParent: {fileID: 0}
+  _defaultWindowActivationAnimation: {fileID: 11400000, guid: 14c170470608f3540a84c04076bb1cfa, type: 2}
+  _defaultWindowDeactivationAnimation: {fileID: 11400000, guid: 8d18ca47c6193b94698c0224722b5e29, type: 2}
+  _defaultWindowsSwitchingStrategy: {fileID: 11400000, guid: 0d39fec0b14159243bf0fecff81e80f7, type: 2}
+  _canvasSortOrderOffset: 0
+  _activatedWindows:
+  - {fileID: 1146849890}
+  _cachedWindows:
+  - {fileID: 1146849890}
+  - {fileID: 344725329}
+  _prefabWindows: []
+--- !u!4 &1471071851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471071849}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492740299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2270,9 +2409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6dea57ae0e48e0a1042fcd5ed0613c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 848909860}
-  _menuWindow: {fileID: 1146849888}
-  _settingsWindow: {fileID: 344725326}
+  _fadingWindowActivationAnimation: {fileID: 11400000, guid: eb91128a1e374794e93147be522bbc4d, type: 2}
 --- !u!1 &2085314950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,5 +2494,6 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 1249641281}
   - {fileID: 848909859}
+  - {fileID: 1471071851}
   - {fileID: 1146849886}
   - {fileID: 344725324}
