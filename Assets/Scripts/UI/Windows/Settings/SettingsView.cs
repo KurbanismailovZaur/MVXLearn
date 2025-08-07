@@ -13,20 +13,11 @@ namespace MVXLearn.UI.Windows.Settings
         
         public Button vibrationButton;
         public TMP_Text vibrationText;
-        private SettingsModel _model;
 
-        public SettingsView(SettingsModel model)
+        public void SetButtonsState(bool sound, bool vibration)
         {
-            _model = model;
-            _model.SettingsStateChanged += OnModelSettingsStateChangedEventHandler;
+            soundText.text = $"Sound: {(sound ? "on" : "off")}";
+            vibrationText.text = $"Vibration: {(vibration ? "on" : "off")}";
         }
-
-        public void UpdateState()
-        {
-            soundText.text = $"Sound: {(_model.Sound ? "on" : "off")}";
-            vibrationText.text = $"Vibration: {(_model.Vibration ? "on" : "off")}";
-        }
-
-        private void OnModelSettingsStateChangedEventHandler(SettingsModel model) => UpdateState();
     }
 }

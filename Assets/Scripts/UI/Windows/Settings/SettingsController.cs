@@ -15,8 +15,12 @@ namespace MVXLearn.UI.Windows.Settings
             _view = view;
             _signalBus = signalBus;
             
+            _view.SetButtonsState(_model.Sound, _model.Vibration);
+            
             _view.soundButton.onClick.AddListener(OnSoundButtonClickEventHandler);
             _view.vibrationButton.onClick.AddListener(OnVibrationButtonClickEventHandler);
+            
+            _model.SettingsStateChanged += OnModelSettingsStateChangedEventHandler;
             
             _view.closeButton.onClick.AddListener(OnCloseButtonClickEventHandler);
         }
@@ -24,6 +28,8 @@ namespace MVXLearn.UI.Windows.Settings
         private void OnSoundButtonClickEventHandler() => _model.Sound = !_model.Sound;
 
         private void OnVibrationButtonClickEventHandler() => _model.Vibration = !_model.Vibration;
+
+        private void OnModelSettingsStateChangedEventHandler(SettingsModel model) => _view.SetButtonsState(model.Sound, model.Vibration);
 
         private void OnCloseButtonClickEventHandler() => _signalBus.Fire(new SettingsCloseClickedSignal());
     }
