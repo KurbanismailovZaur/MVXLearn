@@ -1,23 +1,24 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace MVXLearn.UI.Windows.Settings
 {
-    public class SettingsView : MonoBehaviour
+    public class SettingsView
     {
-        public Button closeButton;
-        
-        public Button soundButton;
-        public TMP_Text soundText;
-        
-        public Button vibrationButton;
-        public TMP_Text vibrationText;
+        [Inject(Id = "close_button")] public Button CloseButton { get; private set; }
+        [Inject(Id = "sound_button")] public Button SoundButton { get; private set; }
+        [Inject(Id = "vibration_button")] public Button VibrationButton { get; private set; }
+        [Inject(Id = "sound_text")] public TMP_Text SoundText { get; private set; }
+        [Inject(Id = "vibration_text")] public TMP_Text VibrationText { get; private set; }
 
         public void SetButtonsState(bool sound, bool vibration)
         {
-            soundText.text = $"Sound: {(sound ? "on" : "off")}";
-            vibrationText.text = $"Vibration: {(vibration ? "on" : "off")}";
+            SoundText.text = $"Sound: {GetState(sound)}";
+            VibrationText.text = $"Vibration: {GetState(vibration)}";
         }
+
+        private static string GetState(bool state) => state ? "on" : "off";
     }
 }

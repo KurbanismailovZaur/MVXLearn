@@ -344,7 +344,6 @@ GameObject:
   - component: {fileID: 344725322}
   - component: {fileID: 344725321}
   - component: {fileID: 344725330}
-  - component: {fileID: 344725325}
   - component: {fileID: 344725329}
   - component: {fileID: 344725328}
   - component: {fileID: 344725327}
@@ -440,23 +439,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &344725325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344725320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 796e5e9c53a247a99d8a2587aac2604b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  closeButton: {fileID: 444394953}
-  soundButton: {fileID: 493497033}
-  soundText: {fileID: 909608230}
-  vibrationButton: {fileID: 1172544359}
-  vibrationText: {fileID: 396871103}
 --- !u!114 &344725327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68882284740c4a20b91f608feb8a7959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _closeButton: {fileID: 444394953}
+  _soundButton: {fileID: 493497033}
+  _vibrationButton: {fileID: 1172544359}
+  _soundText: {fileID: 909608230}
+  _vibrationText: {fileID: 396871103}
 --- !u!114 &344725328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,7 +917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
+  m_AnchoredPosition: {x: -40, y: -40}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &444394953
@@ -1600,7 +1587,6 @@ GameObject:
   - component: {fileID: 1146849885}
   - component: {fileID: 1146849884}
   - component: {fileID: 1146849883}
-  - component: {fileID: 1146849887}
   - component: {fileID: 1146849890}
   - component: {fileID: 1146849889}
   - component: {fileID: 1146849888}
@@ -1696,20 +1682,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1146849887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146849882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ffdec5c5ca4be5be8a7163bd9d18c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playButton: {fileID: 1261317892}
-  settingsButton: {fileID: 426024988}
 --- !u!114 &1146849888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1722,6 +1694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c45bc95f9b40ac8045458e0589226a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playButton: {fileID: 1261317892}
+  _settingsbutton: {fileID: 426024988}
 --- !u!114 &1146849889
 MonoBehaviour:
   m_ObjectHideFlags: 0

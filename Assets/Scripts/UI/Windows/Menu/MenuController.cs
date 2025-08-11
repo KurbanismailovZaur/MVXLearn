@@ -15,8 +15,8 @@ namespace MVXLearn.UI.Windows.Menu
             _view = view;
             _signalBus = signalBus;
 
-            _view.playButton.onClick.AddListener(() => _signalBus.Fire(new PlayClickedSignal()));
-            _view.settingsButton.onClick.AddListener(() => _signalBus.Fire(new SettingsOpenClickedSignal()));
+            _view.PlayButton.onClick.AddListener(() => _signalBus.Fire(new PlayClickedSignal()));
+            _view.SettingsButton.onClick.AddListener(() => _signalBus.Fire(new SettingsOpenClickedSignal()));
         }
     }
 }
