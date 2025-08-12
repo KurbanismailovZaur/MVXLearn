@@ -1,12 +1,14 @@
+using Azur.WindowsSystem;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
 namespace MVXLearn.UI.Windows.Menu
 {
-    public class MenuView
+    public class MenuView : Window
     {
-        [Inject(Id = "play_button")] public Button PlayButton { get; private set; }
-        [Inject(Id = "settings_button")] public Button SettingsButton { get; private set; }
+        [field: SerializeField] public Button PlayButton { get; private set; }
+        [field: SerializeField] public Button SettingsButton { get; private set; }
     }
 }

@@ -451,11 +451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68882284740c4a20b91f608feb8a7959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _closeButton: {fileID: 444394953}
-  _soundButton: {fileID: 493497033}
-  _vibrationButton: {fileID: 1172544359}
-  _soundText: {fileID: 909608230}
-  _vibrationText: {fileID: 396871103}
 --- !u!114 &344725328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +486,11 @@ MonoBehaviour:
   defaultWindowActivationAnimation: {fileID: 11400000, guid: eb91128a1e374794e93147be522bbc4d, type: 2}
   defaultWindowDeactivationAnimation: {fileID: 11400000, guid: 8d18ca47c6193b94698c0224722b5e29, type: 2}
   _canvasGroup: {fileID: 344725330}
+  <CloseButton>k__BackingField: {fileID: 444394953}
+  <SoundButton>k__BackingField: {fileID: 493497033}
+  <VibrationButton>k__BackingField: {fileID: 1172544359}
+  <SoundText>k__BackingField: {fileID: 909608230}
+  <VibrationText>k__BackingField: {fileID: 396871103}
 --- !u!225 &344725330
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1694,8 +1694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c45bc95f9b40ac8045458e0589226a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playButton: {fileID: 1261317892}
-  _settingsbutton: {fileID: 426024988}
 --- !u!114 &1146849889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1730,6 +1728,8 @@ MonoBehaviour:
   _graphicRaycaster: {fileID: 1146849883}
   defaultWindowActivationAnimation: {fileID: 11400000, guid: 14c170470608f3540a84c04076bb1cfa, type: 2}
   defaultWindowDeactivationAnimation: {fileID: 11400000, guid: 8d18ca47c6193b94698c0224722b5e29, type: 2}
+  <PlayButton>k__BackingField: {fileID: 1261317892}
+  <SettingsButton>k__BackingField: {fileID: 426024988}
 --- !u!1 &1172544357
 GameObject:
   m_ObjectHideFlags: 0

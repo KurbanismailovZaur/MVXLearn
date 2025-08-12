@@ -1,3 +1,5 @@
+using System;
+using Azur.WindowsSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,14 +7,14 @@ using Zenject;
 
 namespace MVXLearn.UI.Windows.Settings
 {
-    public class SettingsView
+    public class SettingsView : FadingWindow
     {
-        [Inject(Id = "close_button")] public Button CloseButton { get; private set; }
-        [Inject(Id = "sound_button")] public Button SoundButton { get; private set; }
-        [Inject(Id = "vibration_button")] public Button VibrationButton { get; private set; }
-        [Inject(Id = "sound_text")] public TMP_Text SoundText { get; private set; }
-        [Inject(Id = "vibration_text")] public TMP_Text VibrationText { get; private set; }
-
+        [field: SerializeField] public Button CloseButton { get; private set; }
+        [field: SerializeField] public Button SoundButton { get; private set; }
+        [field: SerializeField] public Button VibrationButton { get; private set; }
+        [field: SerializeField] public TMP_Text SoundText { get; private set; }
+        [field: SerializeField] public TMP_Text VibrationText { get; private set; }
+        
         public void SetButtonsState(bool sound, bool vibration)
         {
             SoundText.text = $"Sound: {GetState(sound)}";
