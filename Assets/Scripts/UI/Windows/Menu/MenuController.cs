@@ -5,18 +5,19 @@ namespace MVXLearn.UI.Windows.Menu
 {
     public class MenuController
     {
-        private readonly MenuModel _model;
-        private readonly MenuView _view;
-        private readonly SignalBus _signalBus;
+        private SignalBus _signalBus;
+        
+        public MenuModel Model { get; private set; }
+        public MenuView View { get; private set; }
 
-        public MenuController(MenuModel model, MenuView view, SignalBus signalBus)
+        public MenuController(SignalBus signalBus, MenuModel model, MenuView view)
         {
-            _model = model;
-            _view = view;
             _signalBus = signalBus;
+            Model = model;
+            View = view;
 
-            _view.PlayButton.onClick.AddListener(() => _signalBus.Fire(new PlayClickedSignal()));
-            _view.SettingsButton.onClick.AddListener(() => _signalBus.Fire(new SettingsOpenClickedSignal()));
+            View.PlayButton.onClick.AddListener(() => _signalBus.Fire(new PlayClickedSignal()));
+            View.SettingsButton.onClick.AddListener(() => _signalBus.Fire(new SettingsOpenClickedSignal()));
         }
     }
 }

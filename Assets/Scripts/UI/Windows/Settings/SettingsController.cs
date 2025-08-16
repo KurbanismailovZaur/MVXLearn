@@ -5,32 +5,33 @@ namespace MVXLearn.UI.Windows.Settings
 {
     public class SettingsController
     {
-        private SettingsModel _model;
-        private SettingsView _view;
         private SignalBus _signalBus;
+        
+        public SettingsModel Model { get; private set; }
+        public SettingsView View { get; private set; }
 
-        public SettingsController(SettingsModel model, SettingsView view, SignalBus signalBus)
+        public SettingsController(SignalBus signalBus, SettingsModel model, SettingsView view)
         {
-            _model = model;
-            _view = view;
             _signalBus = signalBus;
+            Model = model;
+            View = view;
             
-            _view.SetButtonsState(_model.Sound, _model.Vibration);
+            View.SetButtonsState(Model.Sound, Model.Vibration);
             
-            _view.SoundButton.onClick.AddListener(OnSoundButtonClickEventHandler);
-            _view.VibrationButton.onClick.AddListener(OnVibrationButtonClickEventHandler);
+            View.SoundButton.onClick.AddListener(OnSoundButtonClickEventHandler);
+            View.VibrationButton.onClick.AddListener(OnVibrationButtonClickEventHandler);
             
-            _model.SettingsStateChanged += OnModelSettingsStateChangedEventHandler;
+            Model.SettingsStateChanged += OnModelSettingsStateChangedEventHandler;
             
-            _view.CloseButton.onClick.AddListener(OnCloseButtonClickEventHandler);
-            _view.Deactivating += _ => _view.CanvasGroup.alpha = 0f;
+            View.CloseButton.onClick.AddListener(OnCloseButtonClickEventHandler);
+            View.Deactivating += _ => View.CanvasGroup.alpha = 0f;
         }
 
-        private void OnSoundButtonClickEventHandler() => _model.Sound = !_model.Sound;
+        private void OnSoundButtonClickEventHandler() => Model.Sound = !Model.Sound;
 
-        private void OnVibrationButtonClickEventHandler() => _model.Vibration = !_model.Vibration;
+        private void OnVibrationButtonClickEventHandler() => Model.Vibration = !Model.Vibration;
 
-        private void OnModelSettingsStateChangedEventHandler(SettingsModel model) => _view.SetButtonsState(model.Sound, model.Vibration);
+        private void OnModelSettingsStateChangedEventHandler(SettingsModel model) => View.SetButtonsState(model.Sound, model.Vibration);
 
         private void OnCloseButtonClickEventHandler() => _signalBus.Fire(new SettingsCloseClickedSignal());
     }

@@ -1,5 +1,6 @@
 using Azur.WindowsSystem;
 using MVXLearn.Signals.UI;
+using MVXLearn.UI.Animations;
 using MVXLearn.UI.Windows.Settings;
 using UnityEngine;
 using Zenject;
@@ -13,7 +14,8 @@ namespace MVXLearn
         private FadingWindowActivationAnimation _fadingWindowActivationAnimation;
 
         [Inject]
-        private void InjectMethod(SignalBus signalBus, WindowsManager windowsManager, FadingWindowActivationAnimation fadingWindowActivationAnimation)
+        private void InjectMethod(SignalBus signalBus, WindowsManager windowsManager, 
+            FadingWindowActivationAnimation fadingWindowActivationAnimation)
         {
             _signalBus = signalBus;
             _windowsManager = windowsManager;
@@ -29,7 +31,10 @@ namespace MVXLearn
 
         private void OnPlayClickedSignalHandler(PlayClickedSignal clickedSignal) => print("Game Play Starting!");
 
-        private void OnSettingsClickedSignalHandler() => _windowsManager.ActivateWindow<SettingsView>(windowActivationAnimation: _fadingWindowActivationAnimation);
+        private void OnSettingsClickedSignalHandler()
+        {
+            _windowsManager.ActivateWindow<SettingsView>(windowActivationAnimation: _fadingWindowActivationAnimation);
+        }
 
         private void OnSettingsCloseSignalHandler() => _windowsManager.DeactivateCurrentWindow();
     }

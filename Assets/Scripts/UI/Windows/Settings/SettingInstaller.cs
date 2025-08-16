@@ -9,7 +9,7 @@ namespace MVXLearn.UI.Windows.Settings
     {
         public override void InstallBindings()
         {
-            Container.Bind<SettingsModel>().AsCached();
+            Container.Bind<SettingsModel>().AsCached().NonLazy();
             Container.Bind<SettingsView>().FromComponentInHierarchy().AsCached();
             Container.Bind<SettingsController>().AsCached().NonLazy();
         }
