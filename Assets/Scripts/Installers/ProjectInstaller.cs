@@ -1,3 +1,4 @@
+using MVXLearn.Signals.UI;
 using Zenject;
 
 namespace MVXLearn.Installers
@@ -7,6 +8,9 @@ namespace MVXLearn.Installers
         public override void InstallBindings()
         {
             SignalBusInstaller.Install(Container);
+            Container.DeclareSignal<PlayClickedSignal>();
+
+            Container.BindInterfacesAndSelfTo<GameController>().AsSingle();
         }
     }
 }

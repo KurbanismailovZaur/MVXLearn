@@ -1,41 +1,23 @@
 using Azur.WindowsSystem;
+using MVXLearn.Enemies.EnemySpawner;
 using MVXLearn.Signals.UI;
 using MVXLearn.UI.Animations;
 using MVXLearn.UI.Windows.Settings;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace MVXLearn
 {
-    public class GameController : MonoBehaviour, IInitializable
+    public class GameController : IInitializable
     {
         private SignalBus _signalBus;
-        private WindowsManager _windowsManager;
-        private FadingWindowActivationAnimation _fadingWindowActivationAnimation;
 
         [Inject]
-        private void InjectMethod(SignalBus signalBus, WindowsManager windowsManager, 
-            FadingWindowActivationAnimation fadingWindowActivationAnimation)
-        {
-            _signalBus = signalBus;
-            _windowsManager = windowsManager;
-            _fadingWindowActivationAnimation = fadingWindowActivationAnimation;
-        }
+        private void InjectMethod(SignalBus signalBus) => _signalBus = signalBus;
 
-        public void Initialize()
-        {
-            _signalBus.Subscribe<PlayClickedSignal>(OnPlayClickedSignalHandler);
-            _signalBus.Subscribe<SettingsOpenClickedSignal>(OnSettingsClickedSignalHandler);
-            _signalBus.Subscribe<SettingsCloseClickedSignal>(OnSettingsCloseSignalHandler);
-        }
+        public void Initialize() => _signalBus.Subscribe<PlayClickedSignal>(OnPlayClickedSignalHandler);
 
-        private void OnPlayClickedSignalHandler(PlayClickedSignal clickedSignal) => print("Game Play Starting!");
-
-        private void OnSettingsClickedSignalHandler()
-        {
-            _windowsManager.ActivateWindow<SettingsView>(windowActivationAnimation: _fadingWindowActivationAnimation);
-        }
-
-        private void OnSettingsCloseSignalHandler() => _windowsManager.DeactivateCurrentWindow();
+        private void OnPlayClickedSignalHandler(PlayClickedSignal clickedSignal) => SceneManager.LoadScene("Game");
     }
 }
