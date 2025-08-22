@@ -1258,7 +1258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadingWindowActivationAnimation: {fileID: 11400000, guid: eb91128a1e374794e93147be522bbc4d, type: 2}
-  _groundCollider: {fileID: 0}
 --- !u!1 &2085314950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,8 +1447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 374.47647, y: -400}
-  m_SizeDelta: {x: 648.95294, y: 400}
+  m_AnchoredPosition: {x: 300.6018, y: -400}
+  m_SizeDelta: {x: 501.2036, y: 400}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1642021517643732427
 MonoBehaviour:
@@ -2187,8 +2186,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1073.4294, y: -400}
-  m_SizeDelta: {x: 648.95294, y: 400}
+  m_AnchoredPosition: {x: 851.8054, y: -400}
+  m_SizeDelta: {x: 501.2036, y: 400}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &8239969426830574343
 MonoBehaviour:

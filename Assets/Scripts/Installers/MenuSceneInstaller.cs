@@ -23,7 +23,7 @@ namespace MVXLearn.Installers
 
             Container.Bind<Settings>().AsSingle();
 
-            Container.Bind<FadingWindowActivationAnimation>().FromInstance(_fadingWindowActivationAnimation);
+            Container.BindInstance(_fadingWindowActivationAnimation);
             Container.Bind<WindowsManager>().FromComponentInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<MenuSceneController>().AsSingle();
         }

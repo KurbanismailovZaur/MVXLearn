@@ -19,7 +19,7 @@ namespace MVXLearn.Camera
         {
             var pos = Model.Target.position;
             pos.y = Model.Height;
-            View.CameraTransform.position = Vector3.Lerp(View.CameraTransform.position, pos, Model.Interpolation * Time.deltaTime);
+            View.transform.position = Vector3.Lerp(View.transform.position, pos, Model.Interpolation * Time.deltaTime);
         }
     }
 }

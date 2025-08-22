@@ -5,10 +5,10 @@ namespace MVXLearn.Character
 {
     public class CharacterModel
     {
-        [Inject(Id = "character_speed")]
+        [Inject(Id = "speed")]
         public float CharacterSpeed { get; private set; }
 
-        [Inject(Id = "character_rotate_angle")]
+        [Inject(Id = "rotate_angle")]
         public float CharacterRotateAngle { get; private set; }
 
         [Inject]

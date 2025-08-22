@@ -5,27 +5,31 @@ namespace MVXLearn.Character
 {
     public class CharacterController : ITickable
     {
-        [Inject] public CharacterModel Model { get; private set; }
-        [Inject] public CharacterView View { get; private set; }
+        public CharacterModel Model { get; private set; }
+        public CharacterView View { get; private set; }
 
-        public CharacterController(CharacterModel model, CharacterView view)
+        private TickableManager _tickableManager;
+        
+        public CharacterController(CharacterModel model, CharacterView view, TickableManager tickableManager)
         {
             Model = model;
             View = view;
+            _tickableManager = tickableManager;
         }
 
         public void Tick()
         {
+            _tickableManager.Update();
             var horizontal = Input.GetAxis("Horizontal") * Time.deltaTime * Model.CharacterSpeed;
             var vertical = Input.GetAxis("Vertical") * Time.deltaTime * Model.CharacterSpeed;
-            View.CharacterTransform.Translate(horizontal, 0f, vertical, Space.World);
+            View.transform.Translate(horizontal, 0f, vertical, Space.World);
             
             var ray = Model.Camera.ScreenPointToRay(Input.mousePosition);
 
             if (!Model.GroundCollider.Raycast(ray, out var hit, float.PositiveInfinity))
                 return;
 
-            var transform = View.CharacterTransform;
+            var transform = View.transform;
             
             var direction = hit.point - transform.position;
             direction.y = 0;

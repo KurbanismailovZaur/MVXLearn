@@ -7,31 +7,31 @@ namespace MVXLearn.UI.Windows.Settings
     {
         private SignalBus _signalBus;
         
-        public SettingsWindowModel WindowModel { get; private set; }
-        public SettingsWindowView WindowView { get; private set; }
+        public SettingsWindowModel Model { get; private set; }
+        public SettingsWindowView View { get; private set; }
 
-        public SettingsWindowController(SignalBus signalBus, SettingsWindowModel windowModel, SettingsWindowView windowView)
+        public SettingsWindowController(SignalBus signalBus, SettingsWindowModel model, SettingsWindowView view)
         {
             _signalBus = signalBus;
-            WindowModel = windowModel;
-            WindowView = windowView;
+            Model = model;
+            View = view;
             
-            WindowView.SetButtonsState(WindowModel.Sound, WindowModel.Vibration);
+            View.SetButtonsState(Model.Sound, Model.Vibration);
             
-            WindowView.SoundButton.onClick.AddListener(OnSoundButtonClickEventHandler);
-            WindowView.VibrationButton.onClick.AddListener(OnVibrationButtonClickEventHandler);
+            View.SoundButton.onClick.AddListener(OnSoundButtonClickEventHandler);
+            View.VibrationButton.onClick.AddListener(OnVibrationButtonClickEventHandler);
             
-            WindowModel.SettingsStateChanged += OnWindowModelSettingsStateChangedEventHandler;
+            Model.SettingsStateChanged += OnModelSettingsStateChangedEventHandler;
             
-            WindowView.CloseButton.onClick.AddListener(OnCloseButtonClickEventHandler);
-            WindowView.Deactivating += _ => WindowView.CanvasGroup.alpha = 0f;
+            View.CloseButton.onClick.AddListener(OnCloseButtonClickEventHandler);
+            View.Deactivating += _ => View.CanvasGroup.alpha = 0f;
         }
 
-        private void OnSoundButtonClickEventHandler() => WindowModel.Sound = !WindowModel.Sound;
+        private void OnSoundButtonClickEventHandler() => Model.Sound = !Model.Sound;
 
-        private void OnVibrationButtonClickEventHandler() => WindowModel.Vibration = !WindowModel.Vibration;
+        private void OnVibrationButtonClickEventHandler() => Model.Vibration = !Model.Vibration;
 
-        private void OnWindowModelSettingsStateChangedEventHandler(SettingsWindowModel windowModel) => WindowView.SetButtonsState(windowModel.Sound, windowModel.Vibration);
+        private void OnModelSettingsStateChangedEventHandler(SettingsWindowModel windowModel) => View.SetButtonsState(windowModel.Sound, windowModel.Vibration);
 
         private void OnCloseButtonClickEventHandler() => _signalBus.Fire(new SettingsCloseClickedSignal());
     }
