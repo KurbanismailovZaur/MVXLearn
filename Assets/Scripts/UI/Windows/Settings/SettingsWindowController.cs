@@ -24,7 +24,6 @@ namespace MVXLearn.UI.Windows.Settings
             Model.SettingsStateChanged += OnModelSettingsStateChangedEventHandler;
             
             View.CloseButton.onClick.AddListener(OnCloseButtonClickEventHandler);
-            View.Deactivating += _ => View.CanvasGroup.alpha = 0f;
         }
 
         private void OnSoundButtonClickEventHandler() => Model.Sound = !Model.Sound;

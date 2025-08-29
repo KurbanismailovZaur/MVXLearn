@@ -647,8 +647,6 @@ GameObject:
   - component: {fileID: 1146849884}
   - component: {fileID: 1146849883}
   - component: {fileID: 1146849890}
-  - component: {fileID: 1146849889}
-  - component: {fileID: 1146849888}
   m_Layer: 5
   m_Name: Menu Window
   m_TagString: Untagged
@@ -741,36 +739,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1146849888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146849882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3c45bc95f9b40ac8045458e0589226a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1146849889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146849882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
-  _monoInstallers: []
-  _installerPrefabs: []
-  _findSiblingMonoInstallers: 1
-  _autoRun: 1
-  _kernel: {fileID: 0}
 --- !u!114 &1146849890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,8 +987,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultWindowsParent: {fileID: 0}
-  _defaultWindowActivationAnimation: {fileID: 11400000, guid: 14c170470608f3540a84c04076bb1cfa, type: 2}
-  _defaultWindowDeactivationAnimation: {fileID: 11400000, guid: 8d18ca47c6193b94698c0224722b5e29, type: 2}
+  _defaultWindowActivationAnimation: {fileID: 0}
+  _defaultWindowDeactivationAnimation: {fileID: 0}
   _defaultWindowsSwitchingStrategy: {fileID: 11400000, guid: 0d39fec0b14159243bf0fecff81e80f7, type: 2}
   _canvasSortOrderOffset: 0
   _activatedWindows:
@@ -1257,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6dea57ae0e48e0a1042fcd5ed0613c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fadingWindowActivationAnimation: {fileID: 11400000, guid: eb91128a1e374794e93147be522bbc4d, type: 2}
+  _windowsManager: {fileID: 1471071850}
 --- !u!1 &2085314950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,7 +1999,7 @@ MonoBehaviour:
   _canvas: {fileID: 2415692419077336898}
   _graphicRaycaster: {fileID: 2977814318147180163}
   defaultWindowActivationAnimation: {fileID: 11400000, guid: eb91128a1e374794e93147be522bbc4d, type: 2}
-  defaultWindowDeactivationAnimation: {fileID: 11400000, guid: 8d18ca47c6193b94698c0224722b5e29, type: 2}
+  defaultWindowDeactivationAnimation: {fileID: 11400000, guid: d49ba184003acf54ab46205b43764ba6, type: 2}
   _canvasGroup: {fileID: 4571869655365116370}
   <CloseButton>k__BackingField: {fileID: 465377347524294018}
   <SoundButton>k__BackingField: {fileID: 9025647227451034352}

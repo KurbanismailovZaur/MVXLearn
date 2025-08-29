@@ -14,7 +14,7 @@ namespace MVXLearn.Installers
 {
     public class MenuSceneInstaller : MonoInstaller<ProjectInstaller>
     {
-        [SerializeField] private FadingWindowActivationAnimation _fadingWindowActivationAnimation;
+        [SerializeField] private WindowsManager _windowsManager;
         
         public override void InstallBindings()
         {
@@ -22,10 +22,10 @@ namespace MVXLearn.Installers
             Container.DeclareSignal<SettingsCloseClickedSignal>();
 
             Container.Bind<Settings>().AsSingle();
-
-            Container.BindInstance(_fadingWindowActivationAnimation);
-            Container.Bind<WindowsManager>().FromComponentInHierarchy().AsSingle();
+            Container.BindInstance(_windowsManager);
             Container.BindInterfacesAndSelfTo<MenuSceneController>().AsSingle();
+
+            Container.Bind<MenuWindowController>().FromSubContainerResolve().ByInstaller<MenuWindowInstaller>().AsCached().NonLazy();
         }
     }
 }

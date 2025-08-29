@@ -8,32 +8,17 @@ namespace MVXLearn
 {
     public class MenuSceneController : IInitializable
     {
-        private WindowsManager _windowsManager;
-        private SignalBus _signalBus;
-        private FadingWindowActivationAnimation _fadingWindowActivationAnimation;
+        [Inject] private WindowsManager _windowsManager;
+        [Inject] private SignalBus _signalBus;
         
-        public MenuSceneController(SignalBus signalBus, WindowsManager windowsManager,
-            FadingWindowActivationAnimation fadingWindowActivationAnimation)
-        {
-            _signalBus = signalBus;
-            _windowsManager = windowsManager;
-            _fadingWindowActivationAnimation = fadingWindowActivationAnimation;
-        }
-
         public void Initialize()
         {
             _signalBus.Subscribe<SettingsOpenClickedSignal>(OnSettingsOpenClickedSignalHandler);
             _signalBus.Subscribe<SettingsCloseClickedSignal>(OnSettingsCloseClickedSignalHandler);
         }
 
-        private void OnSettingsOpenClickedSignalHandler()
-        {
-            _windowsManager.ActivateWindow<SettingsWindowView>(windowActivationAnimation : _fadingWindowActivationAnimation);
-        }
-        
-        private void OnSettingsCloseClickedSignalHandler()
-        {
-            _windowsManager.DeactivateCurrentWindow();
-        }
+        private void OnSettingsOpenClickedSignalHandler() => _windowsManager.ActivateWindow<SettingsWindowView>();
+
+        private void OnSettingsCloseClickedSignalHandler() => _windowsManager.DeactivateCurrentWindow();
     }
 }
