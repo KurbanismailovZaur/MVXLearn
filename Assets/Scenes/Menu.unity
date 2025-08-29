@@ -647,6 +647,8 @@ GameObject:
   - component: {fileID: 1146849884}
   - component: {fileID: 1146849883}
   - component: {fileID: 1146849890}
+  - component: {fileID: 1146849892}
+  - component: {fileID: 1146849891}
   m_Layer: 5
   m_Name: Menu Window
   m_TagString: Untagged
@@ -757,6 +759,36 @@ MonoBehaviour:
   defaultWindowDeactivationAnimation: {fileID: 11400000, guid: 8d18ca47c6193b94698c0224722b5e29, type: 2}
   <PlayButton>k__BackingField: {fileID: 1261317892}
   <SettingsButton>k__BackingField: {fileID: 426024988}
+--- !u!114 &1146849891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146849882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c45bc95f9b40ac8045458e0589226a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1146849892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146849882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers: []
+  _installerPrefabs: []
+  _findSiblingMonoInstallers: 1
+  _autoRun: 1
+  _kernel: {fileID: 0}
 --- !u!1 &1249641278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windowsManager: {fileID: 1471071850}
+  _menuWindowContext: {fileID: 1146849892}
+  _settingsWindowContext: {fileID: 1642021517643732427}
 --- !u!1 &2085314950
 GameObject:
   m_ObjectHideFlags: 0

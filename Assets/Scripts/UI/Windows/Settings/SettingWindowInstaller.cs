@@ -11,7 +11,7 @@ namespace MVXLearn.UI.Windows.Settings
         {
             Container.Bind<SettingsWindowModel>().AsCached().NonLazy();
             Container.Bind<SettingsWindowView>().FromComponentInHierarchy().AsCached();
-            Container.Bind<SettingsWindowController>().AsCached().NonLazy();
+            Container.Bind<SettingsWindowController>().AsCached();
         }
     }
 }

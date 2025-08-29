@@ -4,7 +4,7 @@ using Zenject;
 
 namespace MVXLearn.UI.Windows.Menu
 {
-    public class MenuWindowInstaller : Installer<MenuWindowInstaller>
+    public class MenuWindowInstaller : MonoInstaller<MenuWindowInstaller>
     {
         public override void InstallBindings()
         {

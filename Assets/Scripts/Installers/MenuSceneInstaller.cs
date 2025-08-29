@@ -16,8 +16,14 @@ namespace MVXLearn.Installers
     {
         [SerializeField] private WindowsManager _windowsManager;
         
+        [SerializeField] private GameObjectContext _menuWindowContext;
+        [SerializeField] private GameObjectContext _settingsWindowContext;
+
         public override void InstallBindings()
         {
+            _menuWindowContext.Install(Container);
+            _settingsWindowContext.Install(Container);
+            
             Container.DeclareSignal<SettingsOpenClickedSignal>();
             Container.DeclareSignal<SettingsCloseClickedSignal>();
 
@@ -25,7 +31,8 @@ namespace MVXLearn.Installers
             Container.BindInstance(_windowsManager);
             Container.BindInterfacesAndSelfTo<MenuSceneController>().AsSingle();
 
-            Container.Bind<MenuWindowController>().FromSubContainerResolve().ByInstaller<MenuWindowInstaller>().AsCached().NonLazy();
+            Container.Bind<MenuWindowController>().FromSubContainerResolve().ByInstance(_menuWindowContext.Container).AsCached().NonLazy();
+            Container.Bind<SettingsWindowController>().FromSubContainerResolve().ByInstance(_settingsWindowContext.Container).AsCached().NonLazy();
         }
     }
 }
