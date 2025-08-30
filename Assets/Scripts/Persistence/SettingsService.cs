@@ -9,7 +9,7 @@ namespace MVXLearn.Persistence
 {
     public class SettingsService : IInitializable
     {
-        private string _saveFileName;
+        private string _pathToFile;
         private SettingsData _settingsData;
 
         public bool Sound
@@ -36,17 +36,20 @@ namespace MVXLearn.Persistence
         
         public SettingsService(GameConfig gameConfig)
         {
-            _saveFileName = gameConfig.saveFileName;
+            _pathToFile = Path.Combine(Application.persistentDataPath, gameConfig.saveFileName);
         }
 
         public void Initialize()
         {
-            var pathToFile = Path.Combine(Application.persistentDataPath, _saveFileName);
-            
-            if (File.Exists(pathToFile))
-                _settingsData = JObject.Parse(File.ReadAllText(pathToFile)).ToObject<SettingsData>();
+            if (File.Exists(_pathToFile))
+                _settingsData = JObject.Parse(File.ReadAllText(_pathToFile)).ToObject<SettingsData>();
             else
                 _settingsData = new SettingsData();
+        }
+
+        public void SaveToFile()
+        {
+            File.WriteAllText(_pathToFile, JObject.FromObject(_settingsData).ToString());
         }
     }
 }
